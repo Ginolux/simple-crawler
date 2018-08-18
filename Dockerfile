@@ -7,6 +7,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD [ "python", "./crawler.py" ]
+# CMD [ "python", "./crawler.py" ]
 
-
+ENTRYPOINT [ "./craler.py" ]

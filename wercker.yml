@@ -12,7 +12,7 @@ dev:
         name: list env
         code: |
           env
-          
+
     # watch file and reload
     - internal/watch:
         code: python crawler.py
@@ -26,7 +26,7 @@ build:
     - script:
         name: run crawler
         code: |
-          python crawler.py
+          python crawler.py http://wiprodigital.com
 
     # test the project
     - script:

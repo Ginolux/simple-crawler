@@ -13,40 +13,6 @@ from bs4 import BeautifulSoup
 from crawler import getLinks
 
 
-# class TestDomain():
-
-#     def testUrl(self):
-#         url = 'http://en.wikipedia.org/wiki/Monty_Python'
-#         html = urlopen(url)
-#         return BeautifulSoup(html, 'html.parser')
-
-
-#     def contentExist(self):
-#         bs = self.testUrl()
-#         content = bs.find('div',{'id':'mw-content-text'})
-#         if content is not None:
-#             return True
-#         return False
-
-#     def getNextLink(self):
-#         bs = self.testUrl()
-#         links = bs.find('div', {'id':'bodyContent'}).find_all('a', href=re.compile('^(/wiki/)((?!:).)*$'))
-#         randomLink = random.SystemRandom().choice(links)
-#         return 'https://wikipedia.org{}'.format(randomLink.attrs['href'])
-
-
-#     def testPageProperties(self):
-#         # while True:
-#         for _ in range(1, 10):
-#             self.contentExist()
-#             self.getNextLink()
-#         print('Done!')
-
-
-# td = TestDomain()
-# # print(td.contentExist())
-# # print(td.getNextLink())
-# print(td.testPageProperties())
 
 
 # def test_url(url):
