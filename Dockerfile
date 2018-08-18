@@ -9,3 +9,4 @@ COPY . .
 
 CMD [ "python", "./crawler.py" ]
 
+
