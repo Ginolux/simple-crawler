@@ -26,7 +26,6 @@ def getLinks(baseUrl):
     try:
         bs = BeautifulSoup(html, 'html.parser')
         if bs is not None:
-            # for link in bs.find_all('a', href=re.compile('^(https://wiprodigital.com)')):
             for link in bs.find_all('a', href=re.compile('^(http)')):
                 if 'href' in link.attrs:
                     if link.attrs['href'] not in pages:
@@ -46,8 +45,9 @@ def getLinks(baseUrl):
         print(err)
 
 
-# getLinks(sys.argv[1])
-getLinks('https://google.com')
-# getLinks('http://www.lkhl')
+if __name__ == "__main__":
+    
+    getLinks(sys.argv[1])
+    # getLinks('https://google.com')
 
-# imageLocation = bs.find('a', {'id': 'logo'}).find('img')['src']
+

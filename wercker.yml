@@ -6,23 +6,14 @@ dev:
   steps:
     # install all the dependencies
     - pip-install
-    # watch file and reload
-    - script:
-        name: check python version
-        code: python --version
-
-    # list packages installed
-    - script:
-        name: list installed packages
-        code: |
-          pip freeze
     
     # list environment
     - script:
         name: list env
         code: |
           env
-    
+          
+    # watch file and reload
     - internal/watch:
         code: python crawler.py
         reload: true
@@ -44,18 +35,15 @@ build:
           # pytest ./test/test_crawler.py
           py.test -v
 
-deploy:
-  steps:
-    - script:
-        name: env
-        code: env
-
-    - internal/docker-push:
-        username: $USERNAME
-        password: $PASSWORD
-        registry: https://hub.docker.com
-        repository: ginolux/crawler
-        tag: 1.0.0
+# deploy:
+#   steps:
+#     - internal/docker-push:
+#         username: $USERNAME
+#         password: $PASSWORD
+#         port: "8080"
+#         registry: https://hub.docker.com
+#         repository: ginolux/crawler
+#         tag: 1.0.0
 
 
 
