@@ -14,6 +14,9 @@ dev:
 build:
   steps:
     - pip-install
+
+test:
+  steps:
     - script:
       name: python pytest
       code: |
@@ -22,6 +25,10 @@ build:
 
 deploy:
   steps:
+    - script:
+        name: env
+        code: env
+        
     - internal/docker-push:
         username: $USERNAME
         password: $PASSWORD
