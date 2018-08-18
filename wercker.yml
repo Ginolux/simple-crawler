@@ -7,34 +7,56 @@ dev:
     # install all the dependencies
     - pip-install
     # watch file and reload
+    - script:
+        name: check python version
+        code: python --version
+
+    # list packages installed
+    - script:
+        name: list installed packages
+        code: |
+          pip freeze
+    
+    # list environment
+    - script:
+        name: list env
+        code: |
+          env
+    
     - internal/watch:
         code: python crawler.py
         reload: true
 
 build:
   steps:
+    # install all the dependencies
     - pip-install
-
-test:
-  steps:
+    # run code
     - script:
-      name: python pytest
-      code: |
-        # pytest ./test/test_crawler.py
-        py.test -v
+        name: run crawler
+        code: |
+          python crawler.py
+
+    # test the project
+    - script:
+        name: test with pytest
+        code: |
+          # pytest ./test/test_crawler.py
+          py.test -v
 
 deploy:
   steps:
     - script:
         name: env
         code: env
-        
+
     - internal/docker-push:
         username: $USERNAME
         password: $PASSWORD
         registry: https://hub.docker.com
-        repository: $USERNAME/crawler
+        repository: ginolux/crawler
         tag: 1.0.0
+
 
 
 

@@ -47,7 +47,7 @@ def getLinks(baseUrl):
 
 
 # getLinks(sys.argv[1])
-getLinks('https://wiprodigital.com')
+getLinks('https://google.com')
 # getLinks('http://www.lkhl')
 
 # imageLocation = bs.find('a', {'id': 'logo'}).find('img')['src']
