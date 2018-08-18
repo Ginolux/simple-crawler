@@ -2,6 +2,8 @@ import os
 import random
 import re
 import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+
 from urllib.error import HTTPError, URLError
 from urllib.request import urlopen
 
@@ -10,7 +12,6 @@ from bs4 import BeautifulSoup
 
 from crawler import getLinks
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 # class TestDomain():
 
