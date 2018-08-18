@@ -1,3 +1,4 @@
+import os
 import random
 import re
 import sys
@@ -8,6 +9,8 @@ import pytest
 from bs4 import BeautifulSoup
 
 from crawler import getLinks
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 # class TestDomain():
 
