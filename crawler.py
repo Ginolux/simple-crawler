@@ -46,8 +46,8 @@ def getLinks(baseUrl):
 
 
 if __name__ == "__main__":
-    
+
     getLinks(sys.argv[1])
-    # getLinks('https://google.com')
+    # getLinks('http://wiprodigital.com')
 
 

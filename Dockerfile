@@ -9,4 +9,4 @@ COPY . .
 
 # CMD [ "python", "./crawler.py" ]
 
-ENTRYPOINT [ "./craler.py" ]
+ENTRYPOINT [ "python", "./crawler.py" ]
