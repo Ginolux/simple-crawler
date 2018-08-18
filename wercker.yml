@@ -1,0 +1,33 @@
+# container definition for the app
+box:
+  id: python:3.7-alpine
+
+dev:
+  steps:
+    # install all the dependencies
+    - pip-install
+    # watch file and reload
+    - internal/watch:
+        code: python crawler.py
+        reload: true
+
+build:
+  steps:
+    - pip-install
+    - script:
+      name: python pytest
+      code: |
+        # pytest ./test/test_crawler.py
+        py.test -v
+
+deploy:
+  steps:
+    - internal/docker-push:
+        username: $USERNAME
+        password: $PASSWORD
+        registry: https://hub.docker.com
+        repository: $USERNAME/crawler
+        tag: 1.0.0
+
+
+
