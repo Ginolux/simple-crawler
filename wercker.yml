@@ -32,8 +32,8 @@ build:
     - script:
         name: test with pytest
         code: |
-          # pytest ./test/test_crawler.py
-          py.test -v
+          pytest ./test/test_crawler.py
+          # py.test -v
 
 # deploy:
 #   steps:
